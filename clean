@@ -1,0 +1,58 @@
+#! /bin/bash
+
+# use csvkit to preprocess YRBS.csv
+# https://www.dataquest.io/blog/data-cleaning-command-line
+
+# install csvkit
+# pip3 install csvkit
+
+# take a look at the first 5 lines
+# head -5 YRBS.csv | csvlook
+
+# use csvcut -n to list column names
+# csvcut -n YRBS.csv
+#  1: YEAR
+#  2: LocationAbbr
+#  3: LocationDesc
+#  4: DataSource
+#  5: Topic
+#  6: Subtopic
+#  7: ShortQuestionText
+#  8: Greater_Risk_Question
+#  9: Description
+# 10: Data_Value_Symbol
+# 11: Data_Value_Type
+# 12: Greater_Risk_Data_Value
+# 13: Greater_Risk_Data_Value_Footnote_Symbol
+# 14: Greater_Risk_Data_Value_Footnote
+# 15: Greater_Risk_Low_Confidence_Limit
+# 16: Greater_Risk_High_Confidence_Limit
+# 17: Lesser_Risk_Question
+# 18: Lesser_Risk_Data_Value
+# 19: Lesser_Risk_Data_Value_Footnote_Symbol
+# 20: Lesser_Risk_Data_Value_Footnote
+# 21: Lesser_Risk_Low_Confidence_Limit
+# 22: Lesser_Risk_High_Confidence_Limit
+# 23: Sample_Size
+# 24: Sex
+# 25: Race
+# 26: Grade
+# 27: GeoLocation
+# 28: TopicId
+# 29: SubTopicID
+# 30: QuestionCode
+# 31: LocationId
+# 32: StratID1
+# 33: StratID2
+# 34: StratID3
+# 35: StratificationType
+
+# check how long it takes to process 10000 rows
+# time head -10000 YRBS.csv | \
+# csvcut -c 1,2,12,15,16,18,21,22,23,24,25,26,30 | \
+# csvgrep -c Race -m 'Total' | csvstat --count
+
+# finally, select columns and filter rows
+# the following code runs for about 2 minutes
+csvcut -c 1,2,12,15,16,18,21,22,23,24,25,26,30 YRBS.csv | \
+csvgrep -c Race -m 'Total' > pre1.csv
