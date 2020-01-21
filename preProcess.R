@@ -33,7 +33,8 @@ questions = c('H23','H24','H25','H26','H68','H69','QNOWT',
 library(dplyr)
 data <- raw %>%
   filter(! is.na(raw$Greater_Risk_Data_Value),
-         QuestionCode %in% questions)
+         QuestionCode %in% questions,
+         LocationAbbr %in% state.abb | LocationAbbr == 'XX')
 
-write.csv(data,file='data/data.csv')
+write.csv(data,file='data/data.csv',row.names=F)
 
