@@ -5,10 +5,9 @@ library(googleVis)
 library(dplyr)
 
 
-df = read.csv('data/data.csv')
+df = read.csv('data/data.csv',stringsAsFactors = F)
+questions = read.csv('data/questions.csv',stringsAsFactors = F)
 
-# make a list here to reduce runtime
-question <- unique(df$QuestionCode)
+df <- df %>% mutate(Percentage = Greater_Risk_Data_Value)
+df <- df %>% mutate(YEAR = as.character(YEAR))
 
-# need to list choices based on question
-year <- unique(df$YEAR)
