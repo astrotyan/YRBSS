@@ -15,7 +15,8 @@ questions <- raw %>%
 write.csv(questions,file='data/questions.csv',row.names=F)
 
 data <- raw %>%
-  filter(LocationAbbr %in% state.abb | LocationAbbr == 'XX') %>%
+  filter(LocationAbbr %in% state.abb | LocationAbbr == 'XX',
+         ! is.na(Greater_Risk_Data_Value)) %>%
   select(YEAR,LocationAbbr,LocationDesc,ShortQuestionText,
          Greater_Risk_Data_Value,Greater_Risk_Low_Confidence_Limit,
          Greater_Risk_High_Confidence_Limit,
