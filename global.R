@@ -18,3 +18,5 @@ df <- df %>% mutate(Grade = factor(Grade,
 gender_levels = c('Total','Female','Male')
 df <- df %>% mutate(Sex = factor(Sex,
                           levels = gender_levels))
+
+

@@ -123,7 +123,15 @@ dashboardPage(
         ) # end of fluidRow
       ), # end of tabItem - correlation
       tabItem(
-        tabName = 'about'
+        tabName = 'about',
+        fluidRow(
+          box(width = 12, title = 'Youth Risk Behavior Surveillance System',
+              status = "primary", solidHeader = TRUE,
+              textOutput('yrbss')),
+          box(width = 12, title = 'Source Code',
+              status = "primary", solidHeader = TRUE,
+              textOutput('source'))
+        ) # end of fluidRow
       ) # end of tabItem - about
     ) # end of tabItems
   ) # end of dashboardBody

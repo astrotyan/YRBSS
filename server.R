@@ -283,8 +283,25 @@ function(input, output, session){
       geom_smooth(aes(color = Grade), se = FALSE)
   })
   
+  output$yrbss <- renderText(
+    paste(
+    'The Youth Risk Behavior Surveillance System (YRBSS)',
+    'monitors six categories of health-related behaviors that',
+    'contribute to the leading causes of death and disability',
+    'among youth and adults. It includes a national',
+    'school-based survey conducted by CDC and state,',
+    'territorial, tribal, and local surveys conducted by',
+    'state, territorial, and local education and health',
+    'agencies and tribal governments. More details can be',
+    'found at https://www.cdc.gov/healthyyouth/data/yrbs.')
+  )
   
-  
+  output$source <- renderText(
+    paste(
+      'This website is developed by Ting Yan using the YRBSS',
+      'data. The source code is on GitHub at',
+      'https://github.com/astrotyan/shiny.')
+  )
 }
 
 
