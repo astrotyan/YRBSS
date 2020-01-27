@@ -1,8 +1,6 @@
 ============================================================
 Data
-
-Monitoring the Future
-http://www.icpsr.umich.edu/cgi-bin/SDA/NAHDAP/hsda?nahdap+37415-0001
+------------------------------------------------------------
 
 Youth Risk Behavior Surveillance System (YRBSS)
 
@@ -11,10 +9,15 @@ https://www.cdc.gov/healthyyouth/data/yrbs/
 High school data:
 https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-Youth-Risk-Behavior-Surveillance-System-YRBSS/svam-8dhg
 
+Monitoring the Future
+http://www.icpsr.umich.edu/cgi-bin/SDA/NAHDAP/hsda?nahdap+37415-0001
+
+============================================================
+Articles
 ------------------------------------------------------------
+
 A great article that points out the hidden reason: lack of sleep. It
 also has links to all the references.
-
 
 https://childmind.org/report/2017-childrens-mental-health-report/smartphones-social-media/
 
@@ -22,8 +25,8 @@ Dr. Twenge's blog that has plots
 https://ifstudies.org/blog/five-facts-about-teen-mental-health-and-screens-a-response-to-anya-kamenetz
 
 ------------------------------------------------------------
-Social media and mental health?
-
+Social media and depression
+------------------------------------------------------------
 
 Article
 https://childmind.org/article/is-social-media-use-causing-depression/
@@ -32,7 +35,7 @@ Paper
 https://journals.sagepub.com/doi/full/10.1177/2167702617723376
 
 ------------------------------------------------------------
-Screen time and sleep?
+Screen time and sleep
 ------------------------------------------------------------
 
 Business insider article
@@ -41,58 +44,11 @@ https://www.businessinsider.com/todays-teens-are-getting-less-sleep-2017-10
 Paper on Sleep Medicine
 https://www.sciencedirect.com/science/article/abs/pii/S1389945717303507
 
-------------------------------------------------------------
-Thoughts?
-------------------------------------------------------------
-
-Maybe good for a certain group? Groups that are adapted to this new era?
-Extrovert?
-
-How about other groups? MtF has data for other groups, adults?
-
-------------------------------------------------------------
-Replicate first!
+============================================================
+Insights from the data
 ------------------------------------------------------------
 
 >3 hour per day
 2005 20% computer 40% TV
 2017 40% TV 20% computer
 
-columns:
-"YEAR"
-"LocationAbbr"
-"Greater_Risk_Data_Value"
-"Lesser_Risk_Data_Value"
-"Sample_Size"
-"Sex"
-"Grade"
-"QuestionCode"
-
-??? confidence limit?
-
-row:
-Greater_Risk_Data_Value != NA
-race == 'Total'
-questioncode == 
-
-H23: During the past 12 months, have you ever been bullied on school property?
-H24: During the past 12 months, have you ever been electronically bullied? (Count being
-bullied through texting, Instagram, Facebook, or other social media.)
-
-H25: During the past 12 months, did you ever feel so sad or hopeless almost every day for two
-weeks or more in a row that you stopped doing some usual activities?
-H26: During the past 12 months, did you ever seriously consider attempting suicide?
-
-H68: Described themselves as slightly or very overweight
-H69: Were not trying to lose weight (Were trying to lose weight???)
-QNOWT: Were overweight
-
-H79: Were physically active at least 60 minutes per day on 5 or more days (???)
-QNPA0DAY: Were not physically active for a total of at least 60 minutes on at least 1 day
-QNPA7DAY: Were not physically active at least 60 minutes per day on all 7 days
-H83: Did not play on at least one sports team
-
-H80: Watched television 3 or more hours per day
-H81: Played video or computer games or used a computer 3 or more hours per day
-
-H88: Did not get 8 or more hours of sleep

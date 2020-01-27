@@ -120,7 +120,7 @@ function(input, output, session){
       filter(Grade == input$grade_s, 
              Sex == input$gender_s) %>%
       ggplot(aes(Percentage)) +
-      geom_histogram(bins = 30, fill = '#368DB8')
+      geom_histogram(bins = 10, fill = '#368DB8')
   })
   
   output$boxplot <- renderPlot({
@@ -149,7 +149,7 @@ function(input, output, session){
       filter(Grade == input$grade_c) %>%
       mutate(YEAR = as.numeric(YEAR)) %>%
       ggplot(aes(YEAR,Percentage)) +
-      geom_point(aes(color=Sex),na.rm=T) +
+      geom_point(aes(color=Sex),na.rm=T, size=3) +
       geom_smooth(aes(color = Sex), se = FALSE)
   })
   
@@ -158,7 +158,7 @@ function(input, output, session){
       filter(Sex == input$gender_c) %>%
       mutate(YEAR = as.numeric(YEAR)) %>%
       ggplot(aes(YEAR,Percentage))  +
-      geom_point(aes(color=Grade),na.rm=T) +
+      geom_point(aes(color=Grade),na.rm=T, size=3) +
       geom_smooth(aes(color = Grade), se = FALSE)
   })
   
@@ -182,10 +182,10 @@ function(input, output, session){
              !is.na(correlations[,3]))
     correlations %>%
       ggplot(aes(correlations[,2],correlations[,3])) +
-      geom_point(aes(color=YEAR),na.rm=T) +
+      geom_point(aes(color=YEAR),na.rm=T,size = 3) +
       labs(x=colnames(correlations)[2],
            y=colnames(correlations)[3]) +
-      geom_smooth(se = FALSE)
+      geom_smooth(method = 'lm')
   })
 
   output$scatter_gender <- renderPlot({
@@ -199,10 +199,10 @@ function(input, output, session){
                !is.na(correlations[,4]))
     correlations %>%
       ggplot(aes(correlations[,3],correlations[,4])) +
-      geom_point(aes(color=Sex),na.rm=T) +
+      geom_point(aes(color=Sex),na.rm=T,size = 3) +
       labs(x=colnames(correlations)[3],
            y=colnames(correlations)[4]) +
-      geom_smooth(aes(color = Sex), se = FALSE)
+      geom_smooth(aes(color = Sex), method = 'lm')
   })
   
   output$scatter_grade <- renderPlot({
@@ -216,10 +216,10 @@ function(input, output, session){
                !is.na(correlations[,4]))
     correlations %>%
       ggplot(aes(correlations[,3],correlations[,4])) +
-      geom_point(aes(color=Grade),na.rm=T) +
+      geom_point(aes(color=Grade),na.rm=T,size = 3) +
       labs(x=colnames(correlations)[3],
            y=colnames(correlations)[4]) +
-      geom_smooth(aes(color = Grade), se = FALSE)
+      geom_smooth(aes(color = Grade), method = 'lm')
   })
 
   df_correlation_state <- reactive({
@@ -243,10 +243,10 @@ function(input, output, session){
                !is.na(correlations[,3]))
     correlations %>%
       ggplot(aes(correlations[,2],correlations[,3])) +
-      geom_point(aes(color=LocationDesc),na.rm=T) +
+      geom_point(aes(color=LocationDesc),na.rm=T,size = 3) +
       labs(x=colnames(correlations)[2],
            y=colnames(correlations)[3]) +
-      geom_smooth(se = FALSE)
+      geom_smooth(method = 'lm')
   })
   
   output$scatter_gender_state <- renderPlot({
@@ -260,10 +260,10 @@ function(input, output, session){
                !is.na(correlations[,4]))
     correlations %>%
       ggplot(aes(correlations[,3],correlations[,4])) +
-      geom_point(aes(color=Sex),na.rm=T) +
+      geom_point(aes(color=Sex),na.rm=T,size = 3) +
       labs(x=colnames(correlations)[3],
            y=colnames(correlations)[4]) +
-      geom_smooth(aes(color = Sex), se = FALSE)
+      geom_smooth(aes(color = Sex), method = 'lm')
   })
   
   output$scatter_grade_state <- renderPlot({
@@ -277,10 +277,10 @@ function(input, output, session){
                !is.na(correlations[,4]))
     correlations %>%
       ggplot(aes(correlations[,3],correlations[,4])) +
-      geom_point(aes(color=Grade),na.rm=T) +
+      geom_point(aes(color=Grade),na.rm=T,size = 3) +
       labs(x=colnames(correlations)[3],
            y=colnames(correlations)[4]) +
-      geom_smooth(aes(color = Grade), se = FALSE)
+      geom_smooth(aes(color = Grade), method = 'lm')
   })
   
   output$yrbss <- renderText(
